@@ -14,7 +14,7 @@ class TestBaseModel(unittest.TestCase):
     def setUpClass(cls):
         """Setup for BaseModel tests includes renaming file.json temporarily,
         resetting FileStorage's dictionary,
-        and creating instances for testing."""
+        and creating instances for testing"""
         try:
             os.rename("file.json", "tmp")
         except IOError:
