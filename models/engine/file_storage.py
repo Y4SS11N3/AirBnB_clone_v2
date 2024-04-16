@@ -1,6 +1,13 @@
 #!/usr/bin/python3
-"""This module defines a class to manage file storage for hbnb clone."""
+"""This module defines a class to manage file storage for hbnb clone"""
 import json
+from models.base_model import BaseModel
+from models.user import User
+from models.place import Place
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
 
 
 class FileStorage:
@@ -14,14 +21,18 @@ class FileStorage:
 
     def all(self, cls=None):
         """Returns a dictionary of models currently in storage"""
-        if cls is None:
-            return FileStorage.__objects
-        else:
-            filtered_dict = {}
-            for key, obj in FileStorage.__objects.items():
-                if isinstance(obj, cls):
-                    filtered_dict[key] = obj
-            return filtered_dict
+        if cls is not None:
+            # Convert cls from string to class if necessary
+            if type(cls) == str:
+                cls = eval(cls)
+            cls_dict = {}
+            for k, v in self.__objects.items():
+                # Filter objects by class
+                if type(v) == cls:
+                    cls_dict[k] = v
+            return cls_dict
+        # Return all objects if no class is specified
+        return self.__objects
 
     def new(self, obj):
         """Adds new object to storage dictionary"""
@@ -37,24 +48,16 @@ class FileStorage:
                     for k, v in FileStorage.__objects.items()
                 }
                 json.dump(temp, f)
-        except Exception as e:
+        except IOError as e:
             print(f"Error saving to file: {e}")
 
     def reload(self):
         """Loads storage dictionary from file"""
-        from models.base_model import BaseModel
-        from models.user import User
-        from models.place import Place
-        from models.state import State
-        from models.city import City
-        from models.amenity import Amenity
-        from models.review import Review
-
         classes = {
-                    'BaseModel': BaseModel, 'User': User, 'Place': Place,
-                    'State': State, 'City': City, 'Amenity': Amenity,
-                    'Review': Review
-                  }
+            'BaseModel': BaseModel, 'User': User, 'Place': Place,
+            'State': State, 'City': City, 'Amenity': Amenity,
+            'Review': Review
+        }
 
         try:
             with open(FileStorage.__file_path, 'r') as f:
@@ -64,10 +67,10 @@ class FileStorage:
                     cls = classes[cls_name]
                     self.new(cls(**val))
         except FileNotFoundError:
-            print("No file found, starting with an empty storage")
+            pass
         except json.JSONDecodeError:
             print("Error decoding JSON from file")
-        except Exception as e:
+        except IOError as e:
             print(f"Error loading from file: {e}")
 
     def delete(self, obj=None):
