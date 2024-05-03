@@ -12,14 +12,12 @@ env.hosts = ['54.90.33.112', '23.23.75.134']
 @runs_once
 def do_pack():
     """Archive the static files"""
-    now = datetime.now().strftime('%Y%m%d%H%M%S')
-    file_path = 'versions/web_static_' + now + '.tgz'
-    local('mkdir -p versions')
-    result = local('tar -cvzf {} web_static'.format(file_path))
-    if result.succeeded:
+    datetime_obj = datetime.now().strftime("%Y%m%d%H%M%S")
+    file_path = "versions/web_static_{}.tgz".format(datetime_obj)
+    local("mkdir -p versions")
+    if local("tar -cvzf {} web_static".format(file_path)).succeeded:
         return file_path
-    else:
-        return None
+    return None
 
 
 def do_deploy(archive_path):
