@@ -19,7 +19,8 @@ def do_pack():
             local("mkdir versions")
         local("tar -cvzf {} web_static".format(file_path))
         return file_path
-    except:
+    except Exception as e:
+        print(f"Error: {e}")
         return None
 
 
@@ -35,17 +36,23 @@ def do_deploy(archive_path):
         file_name = os.path.basename(archive_path)
         folder_path = file_name.strip(".tgz")
         run("mkdir -p /data/web_static/releases/{}/".format(folder_path))
-        run("tar -xzf /tmp/{} -C /data/web_static/releases/{}/"
-            .format(file_name, folder_path))
+        run("tar -xzf /tmp/{} -C /data/web_static/releases/{}/".format(
+            file_name, folder_path))
         run("rm /tmp/{}".format(file_name))
-        run("mv /data/web_static/releases/{}/web_static/* /data/web_static/releases/{}/".format(folder_path, folder_path))
-        run("rm -rf /data/web_static/releases/{}/web_static".format(folder_path))
+        run("mv /data/web_static/releases/{}/web_static/* "
+            "/data/web_static/releases/{}/".format(
+                folder_path, folder_path))
+        run("rm -rf /data/web_static/releases/{}/web_static".format(
+            folder_path))
         run("rm -rf /data/web_static/current")
-        run("ln -s /data/web_static/releases/{} /data/web_static/current".format(folder_path))
+        run("ln -s /data/web_static/releases/{} /data/web_static/current"
+            .format(folder_path))
         print("New version deployed!")
         return True
-    except:
+    except Exception as e:
+        print(f"Error: {e}")
         return False
+
 
 def deploy():
     """
