@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 Fabric script that generates a .tgz archive from the contents of the web_static
-folder of your AirBnB Clone repo, using the function do_pack.
+folder of your AirBnB Clone repo, using the function do_pack, and then
+distributes it to your web servers, using the function do_deploy.
 """
 
 from fabric.api import local, put, run, env
@@ -9,7 +10,6 @@ from datetime import datetime
 import os
 
 env.hosts = ['54.90.33.112', '23.23.75.134']
-
 
 def do_pack():
     """
@@ -21,12 +21,14 @@ def do_pack():
         now = datetime.now()
         file_format = "versions/web_static_{}{}{}{}{}{}.tgz".format(
             now.year, now.month, now.day, now.hour, now.minute, now.second)
+        print("Packing web_static to {}".format(file_format))
         local("tar -cvzf {} web_static".format(file_format))
+        file_size = os.path.getsize(file_format)
+        print("web_static packed: {} -> {}Bytes".format(file_format, file_size))
         return file_format
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
-
 
 def do_deploy(archive_path):
     """
@@ -42,7 +44,7 @@ def do_deploy(archive_path):
         run("mkdir -p {}{}/".format(path, no_ext))
         run("tar -xzf /tmp/{} -C {}{}/".format(file_name, path, no_ext))
         run("rm /tmp/{}".format(file_name))
-        run("mv {}{}/web_static/* {}{}/".format(path, no_ext, path, no_ext))
+        run("rsync -av {}{}/web_static/ {}{}/".format(path, no_ext, path, no_ext))
         run("rm -rf {}{}/web_static".format(path, no_ext))
         run("rm -rf /data/web_static/current")
         run("ln -s {}{}/ /data/web_static/current".format(path, no_ext))
@@ -52,7 +54,6 @@ def do_deploy(archive_path):
         print(f"Deployment failed: {e}")
         return False
 
-
 def deploy():
     """
     Creates and distributes an archive to the web servers.
@@ -60,4 +61,11 @@ def deploy():
     archive_path = do_pack()
     if archive_path is None:
         return False
-    return do_deploy(archive_path)
+    results = []
+    for host in env.hosts:
+        result = do_deploy(archive_path)
+        results.append(result)
+    return all(results)
+
+if __name__ == "__main__":
+    deploy()

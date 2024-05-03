@@ -1,0 +1,208 @@
+2024-05-03 06:41:49,908 - INFO - Starting deployment process.
+2024-05-03 06:41:50,010 - INFO - Package created: versions/web_static_20245364149.tgz
+2024-05-03 06:41:50,105 - DEBUG - starting thread (client mode): 0x9e616b20
+2024-05-03 06:41:50,106 - DEBUG - Local version/idstring: SSH-2.0-paramiko_2.12.0
+2024-05-03 06:41:50,115 - DEBUG - Remote version/idstring: SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.11
+2024-05-03 06:41:50,115 - INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+2024-05-03 06:41:50,117 - DEBUG - === Key exchange possibilities ===
+2024-05-03 06:41:50,117 - DEBUG - kex algos: curve25519-sha256, curve25519-sha256@libssh.org, ecdh-sha2-nistp256, ecdh-sha2-nistp384, ecdh-sha2-nistp521, diffie-hellman-group-exchange-sha256, diffie-hellman-group16-sha512, diffie-hellman-group18-sha512, diffie-hellman-group14-sha256, kex-strict-s-v00@openssh.com
+2024-05-03 06:41:50,117 - DEBUG - server key: rsa-sha2-512, rsa-sha2-256, ssh-rsa, ecdsa-sha2-nistp256, ssh-ed25519
+2024-05-03 06:41:50,117 - DEBUG - client encrypt: chacha20-poly1305@openssh.com, aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, aes256-gcm@openssh.com
+2024-05-03 06:41:50,117 - DEBUG - server encrypt: chacha20-poly1305@openssh.com, aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, aes256-gcm@openssh.com
+2024-05-03 06:41:50,117 - DEBUG - client mac: umac-64-etm@openssh.com, umac-128-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512-etm@openssh.com, hmac-sha1-etm@openssh.com, umac-64@openssh.com, umac-128@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-sha1
+2024-05-03 06:41:50,117 - DEBUG - server mac: umac-64-etm@openssh.com, umac-128-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512-etm@openssh.com, hmac-sha1-etm@openssh.com, umac-64@openssh.com, umac-128@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-sha1
+2024-05-03 06:41:50,117 - DEBUG - client compress: none, zlib@openssh.com
+2024-05-03 06:41:50,117 - DEBUG - server compress: none, zlib@openssh.com
+2024-05-03 06:41:50,117 - DEBUG - client lang: <none>
+2024-05-03 06:41:50,117 - DEBUG - server lang: <none>
+2024-05-03 06:41:50,117 - DEBUG - kex follows: False
+2024-05-03 06:41:50,117 - DEBUG - === Key exchange agreements ===
+2024-05-03 06:41:50,117 - DEBUG - Kex: curve25519-sha256@libssh.org
+2024-05-03 06:41:50,117 - DEBUG - HostKey: ecdsa-sha2-nistp256
+2024-05-03 06:41:50,117 - DEBUG - Cipher: aes128-ctr
+2024-05-03 06:41:50,117 - DEBUG - MAC: hmac-sha2-256
+2024-05-03 06:41:50,117 - DEBUG - Compression: none
+2024-05-03 06:41:50,117 - DEBUG - === End of kex handshake ===
+2024-05-03 06:41:50,164 - DEBUG - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2024-05-03 06:41:50,165 - DEBUG - Switch to new keys ...
+2024-05-03 06:41:50,165 - DEBUG - Got EXT_INFO: {'server-sig-algs': b'ssh-ed25519,sk-ssh-ed25519@openssh.com,ssh-rsa,rsa-sha2-256,rsa-sha2-512,ssh-dss,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ecdsa-sha2-nistp256@openssh.com'}
+2024-05-03 06:41:50,167 - DEBUG - Trying discovered key b'c3496b897205d65daf225e9fd2eae874' in /root/.ssh/id_rsa
+2024-05-03 06:41:50,207 - DEBUG - userauth is OK
+2024-05-03 06:41:50,207 - DEBUG - Finalizing pubkey algorithm for key of type 'ssh-rsa'
+2024-05-03 06:41:50,207 - DEBUG - Our pubkey algorithm list: ['rsa-sha2-512', 'rsa-sha2-256', 'ssh-rsa']
+2024-05-03 06:41:50,207 - DEBUG - Server-side algorithm list: ['ssh-ed25519', 'sk-ssh-ed25519@openssh.com', 'ssh-rsa', 'rsa-sha2-256', 'rsa-sha2-512', 'ssh-dss', 'ecdsa-sha2-nistp256', 'ecdsa-sha2-nistp384', 'ecdsa-sha2-nistp521', 'sk-ecdsa-sha2-nistp256@openssh.com']
+2024-05-03 06:41:50,207 - DEBUG - Agreed upon 'rsa-sha2-512' pubkey algorithm
+2024-05-03 06:41:50,221 - INFO - Authentication (publickey) successful!
+2024-05-03 06:41:50,221 - DEBUG - [chan 0] Max packet in: 32768 bytes
+2024-05-03 06:41:50,653 - DEBUG - Received global request "hostkeys-00@openssh.com"
+2024-05-03 06:41:50,653 - DEBUG - Rejecting "hostkeys-00@openssh.com" global request from server.
+2024-05-03 06:41:50,654 - DEBUG - Debug msg: b'/home/ubuntu/.ssh/authorized_keys:2: key options: agent-forwarding port-forwarding pty user-rc x11-forwarding'
+2024-05-03 06:41:50,696 - DEBUG - [chan 0] Max packet out: 32768 bytes
+2024-05-03 06:41:50,696 - DEBUG - Secsh channel 0 opened.
+2024-05-03 06:41:50,698 - DEBUG - [chan 0] Sesch channel 0 request ok
+2024-05-03 06:41:50,702 - INFO - [chan 0] Opened sftp connection (server version 3)
+2024-05-03 06:41:50,702 - DEBUG - [chan 0] normalize(b'.')
+2024-05-03 06:41:50,703 - DEBUG - [chan 0] lstat(b'/tmp/')
+2024-05-03 06:41:50,705 - DEBUG - [chan 0] stat(b'/tmp/')
+2024-05-03 06:41:50,707 - DEBUG - [chan 0] open(b'/tmp/web_static_20245364149.tgz', 'wb')
+2024-05-03 06:41:50,708 - DEBUG - [chan 0] open(b'/tmp/web_static_20245364149.tgz', 'wb') -> 00000000
+2024-05-03 06:41:50,709 - DEBUG - [chan 0] close(00000000)
+2024-05-03 06:41:50,712 - DEBUG - [chan 0] stat(b'/tmp/web_static_20245364149.tgz')
+2024-05-03 06:41:50,713 - INFO - [chan 0] sftp session closed.
+2024-05-03 06:41:50,713 - DEBUG - [chan 0] EOF sent (0)
+2024-05-03 06:41:50,713 - DEBUG - Uploaded versions/web_static_20245364149.tgz to /tmp/
+2024-05-03 06:41:50,714 - DEBUG - [chan 1] Max packet in: 32768 bytes
+2024-05-03 06:41:50,714 - DEBUG - [chan 0] EOF received (0)
+2024-05-03 06:41:50,715 - DEBUG - [chan 1] Max packet out: 32768 bytes
+2024-05-03 06:41:50,715 - DEBUG - Secsh channel 1 opened.
+2024-05-03 06:41:50,718 - DEBUG - [chan 1] Sesch channel 1 request ok
+2024-05-03 06:41:50,720 - DEBUG - [chan 1] Sesch channel 1 request ok
+2024-05-03 06:41:50,729 - DEBUG - [chan 1] EOF received (1)
+2024-05-03 06:41:50,729 - DEBUG - [chan 1] EOF sent (1)
+2024-05-03 06:41:50,731 - DEBUG - [chan 2] Max packet in: 32768 bytes
+2024-05-03 06:41:50,775 - DEBUG - [chan 2] Max packet out: 32768 bytes
+2024-05-03 06:41:50,775 - DEBUG - Secsh channel 2 opened.
+2024-05-03 06:41:50,777 - DEBUG - [chan 2] Sesch channel 2 request ok
+2024-05-03 06:41:50,778 - DEBUG - [chan 2] Sesch channel 2 request ok
+2024-05-03 06:41:50,801 - DEBUG - [chan 2] EOF received (2)
+2024-05-03 06:41:50,801 - DEBUG - [chan 2] EOF sent (2)
+2024-05-03 06:41:50,803 - DEBUG - [chan 3] Max packet in: 32768 bytes
+2024-05-03 06:41:50,847 - DEBUG - [chan 3] Max packet out: 32768 bytes
+2024-05-03 06:41:50,847 - DEBUG - Secsh channel 3 opened.
+2024-05-03 06:41:50,849 - DEBUG - [chan 3] Sesch channel 3 request ok
+2024-05-03 06:41:50,850 - DEBUG - [chan 3] Sesch channel 3 request ok
+2024-05-03 06:41:50,859 - DEBUG - [chan 3] EOF received (3)
+2024-05-03 06:41:50,860 - DEBUG - [chan 3] EOF sent (3)
+2024-05-03 06:41:50,862 - DEBUG - [chan 4] Max packet in: 32768 bytes
+2024-05-03 06:41:50,903 - DEBUG - [chan 4] Max packet out: 32768 bytes
+2024-05-03 06:41:50,903 - DEBUG - Secsh channel 4 opened.
+2024-05-03 06:41:50,905 - DEBUG - [chan 4] Sesch channel 4 request ok
+2024-05-03 06:41:50,907 - DEBUG - [chan 4] Sesch channel 4 request ok
+2024-05-03 06:41:50,916 - DEBUG - [chan 4] EOF received (4)
+2024-05-03 06:41:50,917 - DEBUG - [chan 4] EOF sent (4)
+2024-05-03 06:41:50,919 - DEBUG - [chan 5] Max packet in: 32768 bytes
+2024-05-03 06:41:50,959 - DEBUG - [chan 5] Max packet out: 32768 bytes
+2024-05-03 06:41:50,959 - DEBUG - Secsh channel 5 opened.
+2024-05-03 06:41:50,961 - DEBUG - [chan 5] Sesch channel 5 request ok
+2024-05-03 06:41:50,962 - DEBUG - [chan 5] Sesch channel 5 request ok
+2024-05-03 06:41:50,971 - DEBUG - [chan 5] EOF received (5)
+2024-05-03 06:41:50,971 - DEBUG - [chan 5] EOF sent (5)
+2024-05-03 06:41:50,978 - DEBUG - [chan 6] Max packet in: 32768 bytes
+2024-05-03 06:41:51,015 - DEBUG - [chan 6] Max packet out: 32768 bytes
+2024-05-03 06:41:51,015 - DEBUG - Secsh channel 6 opened.
+2024-05-03 06:41:51,016 - DEBUG - [chan 6] Sesch channel 6 request ok
+2024-05-03 06:41:51,018 - DEBUG - [chan 6] Sesch channel 6 request ok
+2024-05-03 06:41:51,027 - DEBUG - [chan 6] EOF received (6)
+2024-05-03 06:41:51,027 - DEBUG - [chan 6] EOF sent (6)
+2024-05-03 06:41:51,029 - DEBUG - [chan 7] Max packet in: 32768 bytes
+2024-05-03 06:41:51,071 - DEBUG - [chan 7] Max packet out: 32768 bytes
+2024-05-03 06:41:51,071 - DEBUG - Secsh channel 7 opened.
+2024-05-03 06:41:51,073 - DEBUG - [chan 7] Sesch channel 7 request ok
+2024-05-03 06:41:51,074 - DEBUG - [chan 7] Sesch channel 7 request ok
+2024-05-03 06:41:51,083 - DEBUG - [chan 7] EOF received (7)
+2024-05-03 06:41:51,083 - DEBUG - [chan 7] EOF sent (7)
+2024-05-03 06:41:51,085 - INFO - New version deployed successfully!
+2024-05-03 06:41:51,085 - INFO - Starting deployment process.
+2024-05-03 06:41:51,104 - INFO - Package created: versions/web_static_20245364151.tgz
+2024-05-03 06:41:51,108 - DEBUG - starting thread (client mode): 0x9d5bbbb0
+2024-05-03 06:41:51,108 - DEBUG - Local version/idstring: SSH-2.0-paramiko_2.12.0
+2024-05-03 06:41:51,117 - DEBUG - Remote version/idstring: SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.11
+2024-05-03 06:41:51,117 - INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+2024-05-03 06:41:51,118 - DEBUG - === Key exchange possibilities ===
+2024-05-03 06:41:51,118 - DEBUG - kex algos: curve25519-sha256, curve25519-sha256@libssh.org, ecdh-sha2-nistp256, ecdh-sha2-nistp384, ecdh-sha2-nistp521, diffie-hellman-group-exchange-sha256, diffie-hellman-group16-sha512, diffie-hellman-group18-sha512, diffie-hellman-group14-sha256, kex-strict-s-v00@openssh.com
+2024-05-03 06:41:51,118 - DEBUG - server key: rsa-sha2-512, rsa-sha2-256, ssh-rsa, ecdsa-sha2-nistp256, ssh-ed25519
+2024-05-03 06:41:51,118 - DEBUG - client encrypt: chacha20-poly1305@openssh.com, aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, aes256-gcm@openssh.com
+2024-05-03 06:41:51,118 - DEBUG - server encrypt: chacha20-poly1305@openssh.com, aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, aes256-gcm@openssh.com
+2024-05-03 06:41:51,118 - DEBUG - client mac: umac-64-etm@openssh.com, umac-128-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512-etm@openssh.com, hmac-sha1-etm@openssh.com, umac-64@openssh.com, umac-128@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-sha1
+2024-05-03 06:41:51,118 - DEBUG - server mac: umac-64-etm@openssh.com, umac-128-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512-etm@openssh.com, hmac-sha1-etm@openssh.com, umac-64@openssh.com, umac-128@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-sha1
+2024-05-03 06:41:51,118 - DEBUG - client compress: none, zlib@openssh.com
+2024-05-03 06:41:51,118 - DEBUG - server compress: none, zlib@openssh.com
+2024-05-03 06:41:51,118 - DEBUG - client lang: <none>
+2024-05-03 06:41:51,118 - DEBUG - server lang: <none>
+2024-05-03 06:41:51,118 - DEBUG - kex follows: False
+2024-05-03 06:41:51,118 - DEBUG - === Key exchange agreements ===
+2024-05-03 06:41:51,118 - DEBUG - Kex: curve25519-sha256@libssh.org
+2024-05-03 06:41:51,118 - DEBUG - HostKey: ecdsa-sha2-nistp256
+2024-05-03 06:41:51,118 - DEBUG - Cipher: aes128-ctr
+2024-05-03 06:41:51,119 - DEBUG - MAC: hmac-sha2-256
+2024-05-03 06:41:51,119 - DEBUG - Compression: none
+2024-05-03 06:41:51,119 - DEBUG - === End of kex handshake ===
+2024-05-03 06:41:51,167 - DEBUG - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2024-05-03 06:41:51,167 - DEBUG - Switch to new keys ...
+2024-05-03 06:41:51,168 - DEBUG - Got EXT_INFO: {'server-sig-algs': b'ssh-ed25519,sk-ssh-ed25519@openssh.com,ssh-rsa,rsa-sha2-256,rsa-sha2-512,ssh-dss,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ecdsa-sha2-nistp256@openssh.com'}
+2024-05-03 06:41:51,170 - DEBUG - Trying discovered key b'c3496b897205d65daf225e9fd2eae874' in /root/.ssh/id_rsa
+2024-05-03 06:41:51,210 - DEBUG - userauth is OK
+2024-05-03 06:41:51,210 - DEBUG - Finalizing pubkey algorithm for key of type 'ssh-rsa'
+2024-05-03 06:41:51,210 - DEBUG - Our pubkey algorithm list: ['rsa-sha2-512', 'rsa-sha2-256', 'ssh-rsa']
+2024-05-03 06:41:51,210 - DEBUG - Server-side algorithm list: ['ssh-ed25519', 'sk-ssh-ed25519@openssh.com', 'ssh-rsa', 'rsa-sha2-256', 'rsa-sha2-512', 'ssh-dss', 'ecdsa-sha2-nistp256', 'ecdsa-sha2-nistp384', 'ecdsa-sha2-nistp521', 'sk-ecdsa-sha2-nistp256@openssh.com']
+2024-05-03 06:41:51,210 - DEBUG - Agreed upon 'rsa-sha2-512' pubkey algorithm
+2024-05-03 06:41:51,225 - INFO - Authentication (publickey) successful!
+2024-05-03 06:41:51,226 - DEBUG - [chan 0] Max packet in: 32768 bytes
+2024-05-03 06:41:51,625 - DEBUG - Received global request "hostkeys-00@openssh.com"
+2024-05-03 06:41:51,626 - DEBUG - Rejecting "hostkeys-00@openssh.com" global request from server.
+2024-05-03 06:41:51,626 - DEBUG - Debug msg: b'/home/ubuntu/.ssh/authorized_keys:2: key options: agent-forwarding port-forwarding pty user-rc x11-forwarding'
+2024-05-03 06:41:51,668 - DEBUG - [chan 0] Max packet out: 32768 bytes
+2024-05-03 06:41:51,668 - DEBUG - Secsh channel 0 opened.
+2024-05-03 06:41:51,670 - DEBUG - [chan 0] Sesch channel 0 request ok
+2024-05-03 06:41:51,673 - INFO - [chan 0] Opened sftp connection (server version 3)
+2024-05-03 06:41:51,674 - DEBUG - [chan 0] normalize(b'.')
+2024-05-03 06:41:51,675 - DEBUG - [chan 0] lstat(b'/tmp/')
+2024-05-03 06:41:51,676 - DEBUG - [chan 0] stat(b'/tmp/')
+2024-05-03 06:41:51,677 - DEBUG - [chan 0] open(b'/tmp/web_static_20245364151.tgz', 'wb')
+2024-05-03 06:41:51,679 - DEBUG - [chan 0] open(b'/tmp/web_static_20245364151.tgz', 'wb') -> 00000000
+2024-05-03 06:41:51,680 - DEBUG - [chan 0] close(00000000)
+2024-05-03 06:41:51,683 - DEBUG - [chan 0] stat(b'/tmp/web_static_20245364151.tgz')
+2024-05-03 06:41:51,684 - INFO - [chan 0] sftp session closed.
+2024-05-03 06:41:51,684 - DEBUG - [chan 0] EOF sent (0)
+2024-05-03 06:41:51,684 - DEBUG - Uploaded versions/web_static_20245364151.tgz to /tmp/
+2024-05-03 06:41:51,685 - DEBUG - [chan 1] Max packet in: 32768 bytes
+2024-05-03 06:41:51,686 - DEBUG - [chan 0] EOF received (0)
+2024-05-03 06:41:51,686 - DEBUG - [chan 1] Max packet out: 32768 bytes
+2024-05-03 06:41:51,686 - DEBUG - Secsh channel 1 opened.
+2024-05-03 06:41:51,688 - DEBUG - [chan 1] Sesch channel 1 request ok
+2024-05-03 06:41:51,690 - DEBUG - [chan 1] Sesch channel 1 request ok
+2024-05-03 06:41:51,699 - DEBUG - [chan 1] EOF received (1)
+2024-05-03 06:41:51,699 - DEBUG - [chan 1] EOF sent (1)
+2024-05-03 06:41:51,701 - DEBUG - [chan 2] Max packet in: 32768 bytes
+2024-05-03 06:41:51,742 - DEBUG - [chan 2] Max packet out: 32768 bytes
+2024-05-03 06:41:51,742 - DEBUG - Secsh channel 2 opened.
+2024-05-03 06:41:51,743 - DEBUG - [chan 2] Sesch channel 2 request ok
+2024-05-03 06:41:51,745 - DEBUG - [chan 2] Sesch channel 2 request ok
+2024-05-03 06:41:51,757 - DEBUG - [chan 2] EOF received (2)
+2024-05-03 06:41:51,757 - DEBUG - [chan 2] EOF sent (2)
+2024-05-03 06:41:51,766 - DEBUG - [chan 3] Max packet in: 32768 bytes
+2024-05-03 06:41:51,802 - DEBUG - [chan 3] Max packet out: 32768 bytes
+2024-05-03 06:41:51,802 - DEBUG - Secsh channel 3 opened.
+2024-05-03 06:41:51,804 - DEBUG - [chan 3] Sesch channel 3 request ok
+2024-05-03 06:41:51,805 - DEBUG - [chan 3] Sesch channel 3 request ok
+2024-05-03 06:41:51,814 - DEBUG - [chan 3] EOF received (3)
+2024-05-03 06:41:51,814 - DEBUG - [chan 3] EOF sent (3)
+2024-05-03 06:41:51,816 - DEBUG - [chan 4] Max packet in: 32768 bytes
+2024-05-03 06:41:51,858 - DEBUG - [chan 4] Max packet out: 32768 bytes
+2024-05-03 06:41:51,858 - DEBUG - Secsh channel 4 opened.
+2024-05-03 06:41:51,859 - DEBUG - [chan 4] Sesch channel 4 request ok
+2024-05-03 06:41:51,861 - DEBUG - [chan 4] Sesch channel 4 request ok
+2024-05-03 06:41:51,870 - DEBUG - [chan 4] EOF received (4)
+2024-05-03 06:41:51,870 - DEBUG - [chan 4] EOF sent (4)
+2024-05-03 06:41:51,872 - DEBUG - [chan 5] Max packet in: 32768 bytes
+2024-05-03 06:41:51,914 - DEBUG - [chan 5] Max packet out: 32768 bytes
+2024-05-03 06:41:51,914 - DEBUG - Secsh channel 5 opened.
+2024-05-03 06:41:51,916 - DEBUG - [chan 5] Sesch channel 5 request ok
+2024-05-03 06:41:51,917 - DEBUG - [chan 5] Sesch channel 5 request ok
+2024-05-03 06:41:51,926 - DEBUG - [chan 5] EOF received (5)
+2024-05-03 06:41:51,926 - DEBUG - [chan 5] EOF sent (5)
+2024-05-03 06:41:51,928 - DEBUG - [chan 6] Max packet in: 32768 bytes
+2024-05-03 06:41:51,970 - DEBUG - [chan 6] Max packet out: 32768 bytes
+2024-05-03 06:41:51,970 - DEBUG - Secsh channel 6 opened.
+2024-05-03 06:41:51,971 - DEBUG - [chan 6] Sesch channel 6 request ok
+2024-05-03 06:41:51,973 - DEBUG - [chan 6] Sesch channel 6 request ok
+2024-05-03 06:41:51,982 - DEBUG - [chan 6] EOF received (6)
+2024-05-03 06:41:51,982 - DEBUG - [chan 6] EOF sent (6)
+2024-05-03 06:41:51,984 - DEBUG - [chan 7] Max packet in: 32768 bytes
+2024-05-03 06:41:52,026 - DEBUG - [chan 7] Max packet out: 32768 bytes
+2024-05-03 06:41:52,026 - DEBUG - Secsh channel 7 opened.
+2024-05-03 06:41:52,028 - DEBUG - [chan 7] Sesch channel 7 request ok
+2024-05-03 06:41:52,029 - DEBUG - [chan 7] Sesch channel 7 request ok
+2024-05-03 06:41:52,038 - DEBUG - [chan 7] EOF received (7)
+2024-05-03 06:41:52,038 - DEBUG - [chan 7] EOF sent (7)
+2024-05-03 06:41:52,040 - INFO - New version deployed successfully!
