@@ -11,13 +11,20 @@ env.hosts = ['54.90.33.112', '23.23.75.134']
 
 @runs_once
 def do_pack():
-    """Archive the static files"""
-    datetime_obj = datetime.now().strftime("%Y%m%d%H%M%S")
-    file_path = "versions/web_static_{}.tgz".format(datetime_obj)
-    local("mkdir -p versions")
-    if local("tar -cvzf {} web_static".format(file_path)).succeeded:
-        return file_path
-    return None
+    """
+    Generates a .tgz archive from the contents of the web_static.
+    """
+    try:
+        if not os.path.exists("versions"):
+            local("mkdir versions")
+        now = datetime.now()
+        file_format = "versions/web_static_{}{}{}{}{}{}.tgz".format(
+            now.year, now.month, now.day, now.hour, now.minute, now.second)
+        local("tar -cvzf {} web_static".format(file_format))
+        return file_format
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
 
 
 def do_deploy(archive_path):
