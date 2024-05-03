@@ -9,21 +9,17 @@ import os.path
 env.hosts = ['54.90.33.112', '23.23.75.134']
 
 
-@runs_once
 def do_pack():
     """
     Generates a .tgz archive from the contents of the web_static.
     """
-    try:
-        if not os.path.exists("versions"):
-            local("mkdir versions")
-        now = datetime.now()
-        file_format = "versions/web_static_{}{}{}{}{}{}.tgz".format(
-            now.year, now.month, now.day, now.hour, now.minute, now.second)
-        local("tar -cvzf {} web_static".format(file_format))
-        return file_format
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    now = datetime.now().strftime('%Y%m%d%H%M%S')
+    file_name = 'versions/web_static_' + now + '.tgz'
+    local('mkdir -p versions')
+    result = local('tar -cvzf {} web_static'.format(file_name))
+    if result.succeeded:
+        return file_name
+    else:
         return None
 
 
