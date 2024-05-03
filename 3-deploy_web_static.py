@@ -7,6 +7,7 @@ folder of your AirBnB Clone repo, using the function do_pack.
 from fabric.api import local, put, run, env
 from datetime import datetime
 import os
+import sys
 
 env.hosts = ['54.90.33.112', '23.23.75.134']
 
@@ -25,7 +26,7 @@ def do_pack():
         return file_format
     except Exception as e:
         print(f"An error occurred: {e}")
-        return None
+        sys.exit(1)
 
 
 def do_deploy(archive_path):
@@ -33,7 +34,7 @@ def do_deploy(archive_path):
     Distributes an archive to the web servers.
     """
     if not os.path.exists(archive_path):
-        return False
+        sys.exit(1)
     try:
         file_name = archive_path.split("/")[-1]
         no_ext = file_name.split(".")[0]
@@ -50,7 +51,7 @@ def do_deploy(archive_path):
         return True
     except Exception as e:
         print(f"Deployment failed: {e}")
-        return False
+        sys.exit(1)
 
 
 def deploy():
@@ -59,5 +60,5 @@ def deploy():
     """
     archive_path = do_pack()
     if archive_path is None:
-        return False
+        sys.exit(1)
     return do_deploy(archive_path)
