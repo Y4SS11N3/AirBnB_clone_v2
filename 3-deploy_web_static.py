@@ -2,9 +2,9 @@
 """
 Fabric script that creates and distributes an archive to web servers
 """
-from fabric.api import env, local, put, run, runs_once
+from fabric.api import local, env, put, run
+from os.path import exists
 from datetime import datetime
-import os.path
 
 env.hosts = ['54.90.33.112', '23.23.75.134']
 
