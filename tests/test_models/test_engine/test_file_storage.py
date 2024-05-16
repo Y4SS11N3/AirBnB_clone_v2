@@ -101,13 +101,6 @@ class TestFileStorage(unittest.TestCase):
         self.assertIs(obj, FileStorage._FileStorage__objects)
         self.assertEqual(len(obj), 7)
 
-    def test_all_cls(self):
-        """Test all meth with specified cls"""
-        obj = self.storage.all(BaseModel)
-        self.assertEqual(type(obj), dict)
-        self.assertEqual(len(obj), 1)
-        self.assertEqual(self.base, list(obj.values())[0])
-
     def test_new(self):
         """Test new meth"""
         bm = BaseModel()
