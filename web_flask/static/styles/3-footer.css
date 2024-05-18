@@ -1,0 +1,18 @@
+/* Footer style */
+footer {
+  align-items: center;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  bottom: 0;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+}
+
+footer p {
+  font-weight: 900;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
